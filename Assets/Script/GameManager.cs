@@ -5,6 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject rain;
+    public static GameManager I;
+    int totalScore = 0;
+
+    void Awake()
+    {
+        I = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,4 +28,11 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(rain);
     }
+
+    public void addScore(int score) 
+    {
+        totalScore += score;
+    }
 }
+
+
